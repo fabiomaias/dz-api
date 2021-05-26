@@ -18,7 +18,7 @@ Parte da avaliação prática
 ## Funcionalidades:
 - Criar conta com saldo inicial;
 - Consulta e validação de conta a ser utilizado na autenticação;
-- Atualizar de saldo;
+- Atualizar saldo de pontos;
 - Converter pontos em Reais;
 - Converter Reais em pontos;
 - Adicionar de cartão de crédito virtual ou físico com limite compartilhado;
