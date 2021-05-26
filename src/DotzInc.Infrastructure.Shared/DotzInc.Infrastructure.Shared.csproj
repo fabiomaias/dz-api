@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Version>1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DotzInc.Application\DotzInc.Application.csproj" />
+    <ProjectReference Include="..\DotzInc.Domain\DotzInc.Domain.csproj" />
+    <ProjectReference Include="..\DotzInc.Application\DotzInc.Application.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.7" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.7" />
+    <PackageReference Include="MimeKit" Version="2.9.1" />
+  </ItemGroup>
+</Project>

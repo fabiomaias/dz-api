@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotzInc.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:DotzInc.WebApi.Controllers.v1.AccountController.SignOn(DotzInc.Application.CQRS.Accounts.Commands.CreateAccount.CreateAccountCommand)">
+            <summary>
+                Criar conta
+            </summary>
+            <remarks>
+                Funcionalidade responsável por criar a conta Dotz. Se o saldo em dz não for informado, a conta será criada com incentivo inicial de 200dz.
+            </remarks>
+            <returns></returns>
+            <response code="200">Cria conta e exibe dados mínimos</response>
+            <response code="400">Usuário autenticado já possui conta Dotz.</response>         
+            <response code="401">Token expirado, inválido ou não fornecido</response>
+        </member>
+        <member name="M:DotzInc.WebApi.Controllers.v1.AccountController.GetAccountByAuthID(DotzInc.Application.CQRS.Accounts.Queries.GetAccountByAuthId.GetAccountByAuthIdQuery)">
+            <summary>
+                Consultar Conta Dotz
+            </summary>
+            <remarks>
+               Funcionalidade permite consultar cadastro de conta Dotz. Se o AuthId não for informado, a consulta será realiza com o do usuário autenticado.
+            </remarks>
+            <returns></returns>
+            <response code="200">Retorna os dados básicos da Conta Dotz.</response>
+            <response code="400">Usuário que tentou autenticar não possui conta Dotz.</response>         
+            <response code="401">Token expirado, inválido ou não fornecido</response>
+        </member>
+        <member name="M:DotzInc.WebApi.Controllers.v1.AccountController.UpdateBalanceDz(DotzInc.Application.CQRS.Accounts.Commands.UpdateBalanceDz.UpdateBalanceDzCommand,DotzInc.Domain.Enums.TypeOperationDz)">
+            <summary>
+                Atualizar saldo Dz
+            </summary>
+            <remarks>
+                Funcionalidade responsável por atualizar o saldo da conta Dotz.
+            </remarks>
+            <param name="operation"></param>
+            <param name="command"></param>
+            <returns></returns>
+            <response code="200">Saldo atualizado com sucesso.</response>
+            <response code="400">Erros de validação para valor igual ou menor que 0</response>         
+            <response code="401">Token expirado, inválido ou não fornecido</response>
+        </member>
+        <member name="M:DotzInc.WebApi.Controllers.v1.ConversionController.DzToReal(System.Int32)">
+            <summary>
+                Converter Dz em Reais
+            </summary>
+            <param name="dz">Valor para conversão.</param>
+            <returns>Teste de retorno</returns>
+        </member>
+        <member name="M:DotzInc.WebApi.Controllers.v1.ConversionController.RealToDotz(System.Double)">
+            <summary>
+                Converter Reais em Dz
+            </summary>
+            <param name="real">Valor para conversão.</param>
+            <returns>Teste de retorno</returns>
+        </member>
+        <member name="M:DotzInc.WebApi.Controllers.v1.CreditCardController.AddCreditCard(DotzInc.Application.CQRS.CreditCards.Commands.CreateCard.CreateCardCommand)">
+            <summary>
+                Adicionar Cartão de Crédito
+            </summary>
+            <remarks>
+                Funcionalidade responsável por adicionar cartão de crédito virtual ou físico com limite compartilhado.
+            </remarks>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotzInc.WebApi.Controllers.v1.CreditCardController.UpdateStatus(DotzInc.Application.CQRS.CreditCards.Commands.UpdateCardStatus.UpdateCardStatusCommand)">
+            <summary>
+                Atualizar Status
+            </summary>
+            <remarks>
+                Funcionalidade responsável por atualizar o Status do Cartão de Crédito.
+            </remarks>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotzInc.WebApi.Controllers.v1.CreditCardController.UpdateInvoiceDueDate(DotzInc.Application.CQRS.CreditCards.Commands.UpdateInvoiceDueDate.UpdateInvoiceDueDateCommand)">
+            <summary>
+                Atualizar dia de vencimento
+            </summary>
+            <remarks>
+                Funcionalidade responsável por atualizar o dia de vencimento do Cartão de Crédito.
+            </remarks>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotzInc.WebApi.Controllers.v1.CreditCardController.GetAll">
+            <summary>
+                Consultar Cartões de Crédito da Conta
+            </summary>
+            <remarks>
+               Funcionalidade permite consultar Todos cartões ativos da conta Dotz.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:DotzInc.WebApi.Controllers.v1.TransactionController.AddTransaction(DotzInc.Application.CQRS.Transactions.Commands.CreateTransaction.CreateTransactionCommand)">
+            <summary>
+                Adiciona uma transação
+            </summary>
+            <remarks>
+                Funcionalidade responsável simular uma transação.
+            </remarks>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotzInc.WebApi.Controllers.v1.TransactionController.Get(DotzInc.Application.CQRS.Transactions.Queries.GetAllTransactionsParameter)">
+            <summary>
+                Consultar Transações
+            </summary>
+            <remarks>
+               Funcionalidade permite consultar transações da conta Dotz aplicando filtro de paginação.
+            </remarks>
+            <param name="filter">Valor</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
